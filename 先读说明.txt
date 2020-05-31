@@ -1,7 +1,7 @@
 ﻿ '''通过爬虫在http://psapi.gdieee.com/image/获取图片，格式如下：http://psapi.gdieee.com/image/+图片编号（范围1-90）。'''
 解数独
 
-我用pycharm好像直接运行main.py就行了
+在运行的时候，先在number中创建0-9个文件夹，以数字命名，或者运行mkdir.bat文件。
 
 get 和 解完的图片放在image文件夹中
 
