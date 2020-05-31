@@ -6,10 +6,15 @@ import get_img
 import knn
 
 # 识别图片解数独
+def show(name,image):
+    cv2.imshow(name,image)
+    cv2.waitKeyEx()
+    cv2.destroyAllWindows()
 
 img = cv2.imread(get_img.img)
 # 因为对图像进行裁剪
 img = img[81:495, 10:449]
+
 ##灰度图
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -70,10 +75,13 @@ import sudoku #代码在另外一个文件
 sudoku.solve(sudoku_arry)
 print('result：')
 print(sudoku_arry)
-
+re_img = img.copy()
 #将解填到图片中
 for y in range(9):
     for x in range(9):
-        cv2.putText(img,str(sudoku_arry[y][x]),(int(x*box_w + 5),int(y*box_h + 40)),1, 3, (255, 0, 0), 2, cv2.LINE_AA)
+        cv2.putText(re_img,str(sudoku_arry[y][x]),(int(x*box_w + 5),int(y*box_h + 40)),1, 3, (255, 0, 0), 2, cv2.LINE_AA)
 solve_path = 'image/solve' + str(get_img.number) + '.jpg'
 cv2.imwrite(solve_path,img) #保存图片在image文件架中看
+
+re = np.hstack([img,re_img])
+show('result',re)
