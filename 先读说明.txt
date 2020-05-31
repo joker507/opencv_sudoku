@@ -1,0 +1,14 @@
+﻿ '''通过爬虫在http://psapi.gdieee.com/image/获取图片，格式如下：http://psapi.gdieee.com/image/+图片编号（范围1-90）。'''
+解数独
+
+我用pycharm好像直接运行main.py就行了
+
+get 和 解完的图片放在image文件夹中
+
+get_img.py用来获取数独图片
+knn用来训练一个knn出来 knn.knn 额~
+sudoku.py 一个解数独的，sudoku.solve(m)
+
+就这样吧
+
+--参考教程https://blog.csdn.net/xingchenbingbuyu/article/details/70208199
